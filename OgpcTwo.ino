@@ -86,7 +86,6 @@ bool readPattern() {
       return true;
     }
     int picked = waitButton();
-    Serial.println(picked);
     if (cur != picked) {
       delay(250);
       return false;
@@ -109,7 +108,7 @@ void loop() {
     if(runGames > 0){
       runGames--;
       clearPattern();
-      for(int i = 0; i < 4; i++) addPattern();
+      for(int i = 0; i < 6; i++) addPattern();
       displayPattern();
       if(readPattern()){
         Serial.write('s');
